@@ -13,4 +13,7 @@ The script does the following:
 
 After that you should have a working encfs in /usr/local/bin/.
 
-	
+If you want to use it for your Dropbox Documents directory you could use it like this:
+
+	encfs ~/Dropbox/Documents.encfs ~/Dropbox/Documents.secure -- -o volname="Documents"
+
