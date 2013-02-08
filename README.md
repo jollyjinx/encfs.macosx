@@ -1,9 +1,9 @@
-encFS with macosx.fuse
-------------------------
+encFS with osxfuse
+-------------------
 
 1.7.4 Version of encfs (http://www.arg0.net/encfs) has problems with links on Mac OS X. This is a script to get a working version of encfs on Mountain Lion.
 
-It uses Homebrew (http://mxcl.github.com/homebrew/) and macosx.fuse (http://osxfuse.github.com) as Fuse.
+It uses Homebrew (http://mxcl.github.com/homebrew/) and osxfuse (http://osxfuse.github.com).
 
 The script does the following:
 	- check if homebrew is installed and install it.
