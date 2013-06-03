@@ -32,6 +32,10 @@ then
 	sudo installer  -pkg osxfuse/Install\ OSXFUSE\ 2.5.pkg -target  /
 	hdiutil detach osxfuse
 	rm -f $OSXFUSE.dmg
+	
+	# OSXFuse changes permissions to some brew-managed directories; clean that up:
+	sudo chown $USER:admin /usr/local/include
+	sudo chown $USER:admin /usr/local/lib/pkgconfig
 fi
 
 cp encfsmacosxfuse.rb /usr/local/Library/Formula/
