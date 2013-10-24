@@ -1,7 +1,7 @@
 require 'formula'
 
 class Encfsmacosxfuse < Formula
-  version "1.7.4p1"
+  version "1.7.4p2"
   homepage 'http://www.arg0.net/encfs'
   url 'http://encfs.googlecode.com/files/encfs-1.7.4.tgz'
   sha1 '3d824ba188dbaabdc9e36621afb72c651e6e2945'
@@ -17,8 +17,12 @@ class Encfsmacosxfuse < Formula
   end
 
   def install
-    ENV['CPPFLAGS'] = '-I/usr/local/include/osxfuse'
+    ENV['CPPFLAGS'] = '-I/usr/local/include/osxfuse -stdlib=libstdc++'
+    ENV['LDFLAGS'] = '-stdlib=libstdc++'
+	system "mkdir encfs/sys"
+	system "cp \"$HOMEBREW_SDKROOT/usr/include/sys/_endian.h\" encfs/sys/endian.h"
     inreplace "configure", "-lfuse", "-losxfuse"
+	inreplace "configure", "include <memory.h>", "include <tr1/memory.h>"
     system "./configure", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--with-boost=#{HOMEBREW_PREFIX}"
@@ -74,7 +78,7 @@ index 72d3b9b..2307f42 100644
  
  AC_INIT(encfs/encfs.h) dnl a source file from your sub dir
 -AM_INIT_AUTOMAKE(encfs, 1.7.4) dnl searches for some needed programs
-+AM_INIT_AUTOMAKE(encfs, 1.7.4p1) dnl searches for some needed programs
++AM_INIT_AUTOMAKE(encfs, 1.7.4p2) dnl searches for some needed programs
  
  AC_CANONICAL_HOST
  AM_CONDITIONAL([DARWIN],
@@ -87,7 +91,7 @@ index 91b8f15..1bec2e8 100755
  # Define the identity of the package.
   PACKAGE=encfs
 - VERSION=1.7.4
-+ VERSION=1.7.4p1
++ VERSION=1.7.4p2
  
  
  cat >>confdefs.h <<_ACEOF
