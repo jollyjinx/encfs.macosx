@@ -10,6 +10,7 @@ class Encfsmacosxfuse < Formula
   depends_on 'gettext'
   depends_on 'boost'
   depends_on 'rlog'
+  depends_on 'osxfuse'
 
   def patches
     # fixes link times and xattr on links for mac os x
@@ -31,8 +32,7 @@ class Encfsmacosxfuse < Formula
   end
 
   def caveats; <<-EOS.undent
-    Make sure to install osxfuse (successor to fuse4x)
-    Can be downloaded at http://osxfuse.github.com/
+    Make sure to follow the caveats for osxfuse
     EOS
   end
 end
