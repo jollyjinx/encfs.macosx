@@ -8,9 +8,9 @@ It uses Homebrew (http://mxcl.github.com/homebrew/) and osxfuse (http://osxfuse.
 Installing with Homebrew
 ------------------------
 
-    brew update                        && \
-    brew tap jollyjinx/encfsmacosxfuse && \
-    brew install encfsmacosxfuse
+    brew update              && \
+    brew tap jollyjinx/encfs && \
+    brew install encfs
 
 Be sure to follow the instructions in the caveats for osxfuse, similar to:
 
