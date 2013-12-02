@@ -10,7 +10,7 @@ Installing with Homebrew
 
     brew update              && \
     brew tap jollyjinx/encfs && \
-    brew install encfs
+    brew install jollyjinx/encfs/encfs
 
 Be sure to follow the instructions in the caveats for osxfuse, similar to:
 
