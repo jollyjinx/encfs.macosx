@@ -1,6 +1,8 @@
 encFS with osxfuse
 ==================
 
+Be aware that the patches are already inside the official homebrew encfs package. So no need to use this if you are on Mavericks. For 10.8 it might be helpful.
+
 1.7.4 Version of encfs (http://www.arg0.net/encfs) has problems with links on Mac OS X. This is a script to get a working version of encfs on Mavericks. Checkout git version 36d6c6cbd for a version that works on Mountain Lion.
 
 It uses Homebrew (http://mxcl.github.com/homebrew/) and osxfuse (http://osxfuse.github.com).
