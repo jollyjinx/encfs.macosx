@@ -28,4 +28,4 @@ Example
 
 If you want to use it for your Dropbox Documents directory you could use it like this:
 
-    encfs ~/Dropbox/Documents.encfs ~/Dropbox/Documents.secure -- -o volname="Documents"
+    encfs ~/Dropbox/Documents.encfs ~/Documents.secure -- -o volname="Documents"
